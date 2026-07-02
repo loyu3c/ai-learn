@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Claude AI 中文學習手冊</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">✳</span>
+      <span class="brand-name">Claude AI 中文學習手冊</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">☰</button>
+    <nav class="site-nav" id="siteNav">
+      <a href="#intro">認識 Claude</a>
+      <a href="#models">模型家族</a>
+      <a href="#features">核心功能</a>
+      <a href="#start">如何開始</a>
+      <a href="#prompting">提示技巧</a>
+      <a href="#usecases">應用情境</a>
+      <a href="#resources">延伸資源</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>用中文，看懂 Claude AI</h1>
+      <p class="hero-sub">
+        Claude 是 Anthropic 公司開發的 AI 助理。官方介面與文件多為英文，
+        這份手冊把常用的功能、名詞與使用方式，整理成一頁式的中文導覽，
+        幫助你快速上手。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#features">看核心功能 ↓</a>
+        <a class="btn btn-outline" href="#start">我要開始使用</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Intro -->
+  <section id="intro" class="section">
+    <h2 class="section-title"><span class="tag">01</span>Claude 是什麼？</h2>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>一個會「對話」的 AI 助理</h3>
+        <p>
+          Claude 是由美國 AI 公司 <strong>Anthropic</strong> 打造的大型語言模型（LLM）。
+          你可以把它想像成一位反應很快、讀過大量資料、可以用文字（也能看圖片、讀文件）
+          跟你聊天、幫你寫作、寫程式、整理資料的助理。
+        </p>
+      </div>
+      <div class="intro-card">
+        <h3>你可能已經聽過的名字</h3>
+        <p>
+          <strong>Claude Code</strong>（你現在使用的這個工具背後的技術）、
+          <strong>claude.ai</strong>（網頁版聊天介面）、
+          <strong>Claude API</strong>（讓開發者把 Claude 整合進自己產品的介面），
+          其實都是同一個 Claude 模型，只是「使用的入口」不同。
+        </p>
+      </div>
+      <div class="intro-card">
+        <h3>「Anthropic」跟「Claude」的關係</h3>
+        <p>
+          Anthropic 是公司名稱（研發單位），Claude 是產品 / 模型名稱
+          （就像 Google 是公司、Gemini 是它的模型；OpenAI 是公司、GPT 是它的模型）。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Models -->
+  <section id="models" class="section section-alt">
+    <h2 class="section-title"><span class="tag">02</span>模型家族比較</h2>
+    <p class="section-desc">
+      Claude 不是只有一個模型，而是一個「家族」。不同型號在
+      <strong>聰明程度、回覆速度、使用成本</strong>之間做了不同的取捨，
+      你可以依照任務難度挑選合適的模型。
+    </p>
+
+    <div class="model-grid">
+      <div class="model-card">
+        <div class="model-badge badge-opus">最強</div>
+        <h3>Opus 4.8</h3>
+        <p class="model-desc">推理能力最強、思考最深入，適合最困難、最複雜的任務。</p>
+        <ul>
+          <li>複雜的程式架構設計</li>
+          <li>長篇研究與深度分析</li>
+          <li>需要多步驟推理的任務</li>
+        </ul>
+        <div class="model-meta">速度：中等　｜　成本：較高</div>
+      </div>
+
+      <div class="model-card model-card-highlight">
+        <div class="model-badge badge-sonnet">均衡首選</div>
+        <h3>Sonnet 5</h3>
+        <p class="model-desc">智慧與速度的最佳平衡點，是目前最常用的日常主力模型。</p>
+        <ul>
+          <li>日常對話、寫作、翻譯</li>
+          <li>程式撰寫與除錯</li>
+          <li>文件摘要、資料整理</li>
+        </ul>
+        <div class="model-meta">速度：快　｜　成本：中等</div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-badge badge-haiku">最快</div>
+        <h3>Haiku 4.5</h3>
+        <p class="model-desc">體積最小、回覆最快、成本最低，適合大量、即時、簡單的任務。</p>
+        <ul>
+          <li>即時客服對話</li>
+          <li>簡單分類、資料抽取</li>
+          <li>需要低延遲的應用</li>
+        </ul>
+        <div class="model-meta">速度：最快　｜　成本：最低</div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-badge badge-fable">創意向</div>
+        <h3>Fable 5</h3>
+        <p class="model-desc">偏向創意寫作與敘事表現調校的模型，適合說故事、創作類任務。</p>
+        <ul>
+          <li>故事、劇本、文案創作</li>
+          <li>角色扮演式對話</li>
+          <li>需要豐富文筆的內容</li>
+        </ul>
+        <div class="model-meta">速度：快　｜　成本：中等</div>
+      </div>
+    </div>
+
+    <p class="hint">
+      💡 小提醒：不確定要選哪一個時，先用 <strong>Sonnet</strong> 系列就對了——
+      它是多數人日常使用的預設選擇，簡單任務用小模型（Haiku）省錢省時間，
+      困難任務再升級到大模型（Opus）。
+    </p>
+  </section>
+
+  <!-- 3. Features -->
+  <section id="features" class="section">
+    <h2 class="section-title"><span class="tag">03</span>核心功能導覽</h2>
+    <p class="section-desc">點選下方分類，看看 Claude 各項基礎功能的中文說明與使用情境。</p>
+
+    <div class="tabs">
+      <div class="tab-buttons" id="tabButtons">
+        <button class="tab-btn active" data-tab="chat">💬 對話與寫作</button>
+        <button class="tab-btn" data-tab="code">👨‍💻 程式協助</button>
+        <button class="tab-btn" data-tab="vision">🖼️ 圖片與文件理解</button>
+        <button class="tab-btn" data-tab="context">📚 長文本閱讀</button>
+        <button class="tab-btn" data-tab="tools">🛠️ 工具使用</button>
+        <button class="tab-btn" data-tab="artifacts">🧩 Artifacts 即時預覽</button>
+        <button class="tab-btn" data-tab="projects">📁 Projects 專案</button>
+        <button class="tab-btn" data-tab="computeruse">🖥️ Computer Use</button>
+      </div>
+
+      <div class="tab-panels">
+
+        <div class="tab-panel active" data-tab="chat">
+          <h3>💬 對話與寫作（Chat）</h3>
+          <p><strong>是什麼：</strong>最基本的功能。用自然語言打字跟 Claude 對話，它會理解你的問題並用文字回覆。</p>
+          <p><strong>可以做什麼：</strong>回答問題、腦力激盪、寫文章／email／社群貼文、潤稿、翻譯、角色扮演練習對話等。</p>
+          <div class="example-box">
+            <div class="example-label">範例提示詞</div>
+            <p>「幫我把這封 email 改得更正式、更有禮貌，但不要太長：〔貼上你的內容〕」</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="code">
+          <h3>👨‍💻 程式撰寫與除錯（Coding）</h3>
+          <p><strong>是什麼：</strong>Claude 能讀懂、撰寫、解釋多種程式語言的程式碼，也能幫你找出並修正錯誤（bug）。</p>
+          <p><strong>可以做什麼：</strong>從零寫一個小工具、解釋一段看不懂的程式碼、重構程式、寫測試、把錯誤訊息貼給它幫你抓蟲。
+          你現在使用的 <strong>Claude Code</strong>（命令列工具）就是把這項能力包裝成可以直接操作專案檔案的開發助理。</p>
+          <div class="example-box">
+            <div class="example-label">範例提示詞</div>
+            <p>「這段 Python 程式跑出 IndexError，幫我找出原因並修好：〔貼上程式碼與錯誤訊息〕」</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="vision">
+          <h3>🖼️ 圖片與文件理解（Vision / 多模態）</h3>
+          <p><strong>是什麼：</strong>Claude 除了讀文字，也能「看」圖片、截圖、圖表，以及讀取 PDF、Word 等文件內容。</p>
+          <p><strong>可以做什麼：</strong>看一張圖表幫你解讀數據、看網站截圖抓 UI 問題、把手寫筆記轉成文字、幫你摘要一份 PDF 報告。</p>
+          <div class="example-box">
+            <div class="example-label">範例情境</div>
+            <p>上傳一張數學題目的照片，請它「一步一步解釋解題過程」。</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="context">
+          <h3>📚 長文本閱讀（Long Context）</h3>
+          <p><strong>是什麼：</strong>Claude 一次可以「讀」非常長的內容（可達數十萬字），不會像短記憶的助理一樣忘記前面說過什麼。</p>
+          <p><strong>可以做什麼：</strong>一次丟一整本書、一整份法律合約、一整個程式碼庫，請它做摘要、找重點、比對前後矛盾之處。</p>
+          <div class="example-box">
+            <div class="example-label">範例提示詞</div>
+            <p>「以下是一份 50 頁的合約，幫我整理出對甲方（我方）不利的條款，並用條列式列出：〔貼上全文〕」</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="tools">
+          <h3>🛠️ 工具使用（Tool Use / Function Calling）</h3>
+          <p><strong>是什麼：</strong>讓 Claude 不只是「回答文字」，還能在需要時去「呼叫」外部工具或程式，
+          例如查天氣 API、搜尋網路、計算機、查詢資料庫，取得即時或精確的結果後再回覆你。</p>
+          <p><strong>相關名詞：</strong><strong>MCP（Model Context Protocol）</strong>
+          是 Anthropic 推出的一套標準，讓 Claude 可以用統一的方式連接各種外部工具與資料來源
+          （例如 Google Drive、Slack、GitHub），大幅擴充它能完成的任務範圍。</p>
+          <div class="example-box">
+            <div class="example-label">生活化比喻</div>
+            <p>Claude 本身像一個很聰明的大腦，工具使用／MCP 就像是幫這顆大腦裝上手腳，
+            讓它能真的去「操作」外部的東西，而不只是動腦想。</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="artifacts">
+          <h3>🧩 Artifacts（即時預覽產出）</h3>
+          <p><strong>是什麼：</strong>在 claude.ai 網頁版對話時，如果請 Claude 產生程式碼、網頁、圖表、文件等「較完整的內容」，
+          它會在對話旁邊開一個獨立的預覽視窗即時顯示成品，而不是全部混在聊天紀錄裡。</p>
+          <p><strong>可以做什麼：</strong>直接在瀏覽器裡看到你要的網頁長怎樣、圖表畫出來的樣子、程式碼的執行結果，
+          方便反覆修改、迭代。</p>
+        </div>
+
+        <div class="tab-panel" data-tab="projects">
+          <h3>📁 Projects（專案功能）</h3>
+          <p><strong>是什麼：</strong>可以建立一個「專案」，把相關的文件、資料、自訂指示（例如公司的寫作風格、
+          常用術語）都放在裡面，之後在這個專案內的每次對話，Claude 都會自動參考這些背景資料。</p>
+          <p><strong>可以做什麼：</strong>幫團隊建立一個「客服知識庫專案」、「產品文件專案」，讓每次提問都基於同一批資料回答，
+          不用每次重新貼資料。</p>
+        </div>
+
+        <div class="tab-panel" data-tab="computeruse">
+          <h3>🖥️ Computer Use（電腦操作）</h3>
+          <p><strong>是什麼：</strong>讓 Claude 直接「看」你的電腦螢幕畫面，並模擬滑鼠點擊、鍵盤輸入，
+          像真人一樣操作電腦上的軟體，來完成多步驟的自動化任務。</p>
+          <p><strong>可以做什麼：</strong>自動化重複性的表單填寫、跨多個網站蒐集資訊、測試軟體介面流程等，
+          目前多用於開發者打造自動化代理人（Agent）應用。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Start -->
+  <section id="start" class="section section-alt">
+    <h2 class="section-title"><span class="tag">04</span>如何開始使用</h2>
+    <div class="start-grid">
+      <div class="start-card">
+        <div class="start-num">1</div>
+        <h3>網頁版 claude.ai</h3>
+        <p>最簡單的入門方式。註冊帳號後即可在瀏覽器裡直接跟 Claude 對話，
+        適合日常聊天、寫作、學習使用，不需要任何技術背景。</p>
+      </div>
+      <div class="start-card">
+        <div class="start-num">2</div>
+        <h3>Claude API</h3>
+        <p>給開發者使用的介面。透過程式呼叫 Claude，把它整合進自己開發的
+        App、網站或內部工具中，依實際用量計費。</p>
+      </div>
+      <div class="start-card">
+        <div class="start-num">3</div>
+        <h3>Claude Code（CLI）</h3>
+        <p>在終端機（命令列）中直接使用的開發助理，可以讀寫你專案裡的檔案、
+        執行指令、幫你完成程式開發任務——就是你現在正在體驗的工具。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Prompting -->
+  <section id="prompting" class="section">
+    <h2 class="section-title"><span class="tag">05</span>提示技巧（Prompting 入門）</h2>
+    <p class="section-desc">問得好，答案才會好。以下是幾個新手最有感的技巧：</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>1. 給清楚的角色與目標</h4>
+        <p class="tip-bad">❌「幫我寫一段文案」</p>
+        <p class="tip-good">✅「你是一位社群小編，幫我寫一則 IG 貼文文案，推廣新上市的手沖咖啡豆，語氣要輕鬆活潑」</p>
+      </div>
+      <div class="tip-card">
+        <h4>2. 提供背景資料</h4>
+        <p>把需要的原始資料、範例、限制條件直接貼給 Claude，而不是只描述，減少它「猜」的空間。</p>
+      </div>
+      <div class="tip-card">
+        <h4>3. 說明期望的格式</h4>
+        <p>指定「用條列式」「用表格」「限制在 100 字以內」「用繁體中文回答」，輸出會更符合你的需求。</p>
+      </div>
+      <div class="tip-card">
+        <h4>4. 拆解複雜任務</h4>
+        <p>困難的任務可以先請它「列出步驟」，確認方向沒問題後，再逐步請它完成每一步。</p>
+      </div>
+      <div class="tip-card">
+        <h4>5. 允許它說「不知道」</h4>
+        <p>可以在提示詞加上「如果不確定，請直接說不確定，不要編造答案」，降低 AI 幻覺（瞎掰）的風險。</p>
+      </div>
+      <div class="tip-card">
+        <h4>6. 善用追問與修改</h4>
+        <p>第一次的回答不滿意很正常，直接接著說「太長了，幫我濃縮成 3 點」即可，不需要重新問一次。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Use cases -->
+  <section id="usecases" class="section section-alt">
+    <h2 class="section-title"><span class="tag">06</span>常見應用情境</h2>
+    <div class="usecase-grid">
+      <div class="usecase-card"><span class="usecase-icon">✍️</span><h4>寫作與潤稿</h4><p>文章、email、簡報講稿、社群文案的撰寫與修改</p></div>
+      <div class="usecase-card"><span class="usecase-icon">💻</span><h4>程式開發</h4><p>寫程式、除錯、程式碼解說、產生測試案例</p></div>
+      <div class="usecase-card"><span class="usecase-icon">📊</span><h4>資料整理與分析</h4><p>摘要報告、整理會議紀錄、解讀圖表數據</p></div>
+      <div class="usecase-card"><span class="usecase-icon">🎓</span><h4>學習輔助</h4><p>解釋難懂的觀念、出練習題、當作口語練習夥伴</p></div>
+      <div class="usecase-card"><span class="usecase-icon">🌐</span><h4>翻譯與跨語言溝通</h4><p>多語言互譯，並保留語氣與語境</p></div>
+      <div class="usecase-card"><span class="usecase-icon">🤖</span><h4>客服與自動化</h4><p>打造自動回覆客服問題、處理重複性任務的機器人</p></div>
+    </div>
+  </section>
+
+  <!-- 7. Resources -->
+  <section id="resources" class="section">
+    <h2 class="section-title"><span class="tag">07</span>延伸資源</h2>
+    <div class="resource-list">
+      <a class="resource-item" href="https://claude.ai" target="_blank" rel="noopener">
+        <strong>claude.ai</strong><span>官方網頁版對話介面</span>
+      </a>
+      <a class="resource-item" href="https://www.anthropic.com" target="_blank" rel="noopener">
+        <strong>anthropic.com</strong><span>Anthropic 官方網站</span>
+      </a>
+      <a class="resource-item" href="https://docs.claude.com" target="_blank" rel="noopener">
+        <strong>docs.claude.com</strong><span>官方技術文件（英文，適合開發者）</span>
+      </a>
+    </div>
+    <p class="hint">💡 官方文件目前多為英文，建議搭配 Claude 本身把不懂的段落請它「用中文解釋」給你聽，邊查邊學。</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>本頁為個人學習用中文導覽整理，內容以淺顯說明為主，實際功能請以官方最新資訊為準。</p>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
