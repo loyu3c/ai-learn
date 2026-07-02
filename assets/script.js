@@ -1,16 +1,18 @@
-// 分頁籤切換（核心功能區塊）
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabPanels = document.querySelectorAll(".tab-panel");
+// 分頁籤切換（每個 .tabs 區塊各自獨立運作，同一頁可以有多組）
+document.querySelectorAll(".tabs").forEach((tabs) => {
+  const buttons = tabs.querySelectorAll(".tab-btn");
+  const panels = tabs.querySelectorAll(".tab-panel");
 
-tabButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const target = btn.dataset.tab;
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
 
-    tabButtons.forEach((b) => b.classList.remove("active"));
-    tabPanels.forEach((p) => p.classList.remove("active"));
+      buttons.forEach((b) => b.classList.remove("active"));
+      panels.forEach((p) => p.classList.remove("active"));
 
-    btn.classList.add("active");
-    document.querySelector(`.tab-panel[data-tab="${target}"]`).classList.add("active");
+      btn.classList.add("active");
+      tabs.querySelector(`.tab-panel[data-tab="${target}"]`).classList.add("active");
+    });
   });
 });
 

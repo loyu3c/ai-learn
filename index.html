@@ -20,6 +20,7 @@
       <a href="#models">模型家族</a>
       <a href="#features">核心功能</a>
       <a href="#start">如何開始</a>
+      <a href="#advanced">進階應用</a>
       <a href="#prompting">提示技巧</a>
       <a href="#usecases">應用情境</a>
       <a href="#resources">延伸資源</a>
@@ -269,9 +270,86 @@
     </div>
   </section>
 
-  <!-- 5. Prompting -->
+  <!-- 5. Advanced: cross-device -->
+  <section id="advanced" class="section">
+    <h2 class="section-title"><span class="tag">05</span>進階應用：跨裝置使用 Claude</h2>
+    <p class="section-desc">
+      Claude 不是只能在網頁上用。依照你的使用場景，手機、電腦、程式編輯器（IDE）
+      都有對應的官方應用方式，掌握這些能讓 Claude 更深入融入日常工作流程。
+    </p>
+
+    <div class="tabs">
+      <div class="tab-buttons" id="advTabButtons">
+        <button class="tab-btn active" data-tab="mobile">📱 手機端</button>
+        <button class="tab-btn" data-tab="desktop">🖥️ 電腦端</button>
+        <button class="tab-btn" data-tab="ide">🧑‍💻 IDE 上的應用</button>
+      </div>
+
+      <div class="tab-panels">
+
+        <div class="tab-panel active" data-tab="mobile">
+          <h3>📱 手機端：Claude App（iOS／Android）</h3>
+          <p><strong>是什麼：</strong>官方推出的手機原生 App，跟網頁版共用同一個帳號，
+          對話紀錄會自動跨裝置同步——在電腦上聊到一半，也能在手機上接著問。</p>
+          <p><strong>手機版特別好用的功能：</strong></p>
+          <ul class="feature-list">
+            <li><strong>語音輸入 / 語音對話：</strong>用講的取代打字，適合走路、通勤時使用</li>
+            <li><strong>拍照直接問：</strong>用相機拍下考題、菜單、路標、產品標示，直接請 Claude 解讀或翻譯</li>
+            <li><strong>分享功能：</strong>把其他 App 裡的文字、連結、圖片透過手機的「分享」功能直接送進 Claude 詢問</li>
+          </ul>
+          <div class="example-box">
+            <div class="example-label">範例情境</div>
+            <p>出國旅遊時拍下菜單照片，請 Claude「幫我翻譯這張菜單，並標出有海鮮的品項」。</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="desktop">
+          <h3>🖥️ 電腦端：Claude 桌面應用程式（macOS／Windows）</h3>
+          <p><strong>是什麼：</strong>官方推出的桌面版原生應用程式，跟純網頁版最大的差異，
+          是它能作為「常駐」在電腦上的助理，並且能連接本機端的工具與資料。</p>
+          <p><strong>桌面版特別好用的功能：</strong></p>
+          <ul class="feature-list">
+            <li><strong>全域快捷鍵：</strong>不用開瀏覽器、切分頁，用快捷鍵隨時叫出對話視窗</li>
+            <li><strong>連接 MCP 工具：</strong>搭配 <strong>MCP（Model Context Protocol）</strong>，
+            讓 Claude 存取本機檔案、行事曆、Google Drive、Slack 等資料來源與工具，回答時能直接參考你的真實資料</li>
+            <li><strong>獨立視窗、可置頂：</strong>方便一邊工作、一邊對照 Claude 的回覆</li>
+          </ul>
+          <div class="example-box">
+            <div class="example-label">範例情境</div>
+            <p>設定好 MCP 連接本機資料夾後，直接問 Claude「幫我整理桌面上這份 Excel 報表的重點」，
+            不用手動把檔案內容貼進對話框。</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="ide">
+          <h3>🧑‍💻 IDE 上的應用：讓 Claude 直接在程式編輯器裡工作</h3>
+          <p><strong>是什麼：</strong>對開發者來說最實用的整合方式，讓 Claude 不只是「回答程式問題」，
+          而是能直接在你寫程式的環境裡讀寫檔案、產生程式碼、顯示修改前後的差異（diff）。</p>
+          <p><strong>常見的使用方式：</strong></p>
+          <ul class="feature-list">
+            <li><strong>Claude Code（終端機 CLI）：</strong>就是你現在正在使用的工具。
+            在終端機中啟動後，它能讀懂整個專案的程式碼結構、跨多個檔案修改、執行測試與指令，
+            適合處理較大範圍的開發任務</li>
+            <li><strong>VS Code 擴充套件：</strong>官方提供的 Claude Code 擴充套件，
+            可以直接在 VS Code 側邊欄跟 Claude 對話，程式碼修改會以「差異對比」的方式顯示在編輯器裡，
+            確認後才套用，不用切換視窗</li>
+            <li><strong>JetBrains 系列擴充套件：</strong>支援 IntelliJ IDEA、PyCharm、WebStorm 等
+            JetBrains 系列的 IDE，用法與 VS Code 版本類似，讓習慣使用這些編輯器的開發者也能無縫使用</li>
+          </ul>
+          <div class="example-box">
+            <div class="example-label">範例情境</div>
+            <p>在 VS Code 裡選取一段有問題的函式，請 Claude「幫我重構這段程式碼並加上錯誤處理」，
+            修改結果會直接以 diff 顯示在編輯器中，確認沒問題再套用即可。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Prompting -->
   <section id="prompting" class="section">
-    <h2 class="section-title"><span class="tag">05</span>提示技巧（Prompting 入門）</h2>
+    <h2 class="section-title"><span class="tag">06</span>提示技巧（Prompting 入門）</h2>
     <p class="section-desc">問得好，答案才會好。以下是幾個新手最有感的技巧：</p>
 
     <div class="tips-grid">
@@ -303,9 +381,9 @@
     </div>
   </section>
 
-  <!-- 6. Use cases -->
+  <!-- 7. Use cases -->
   <section id="usecases" class="section section-alt">
-    <h2 class="section-title"><span class="tag">06</span>常見應用情境</h2>
+    <h2 class="section-title"><span class="tag">07</span>常見應用情境</h2>
     <div class="usecase-grid">
       <div class="usecase-card"><span class="usecase-icon">✍️</span><h4>寫作與潤稿</h4><p>文章、email、簡報講稿、社群文案的撰寫與修改</p></div>
       <div class="usecase-card"><span class="usecase-icon">💻</span><h4>程式開發</h4><p>寫程式、除錯、程式碼解說、產生測試案例</p></div>
@@ -316,9 +394,9 @@
     </div>
   </section>
 
-  <!-- 7. Resources -->
+  <!-- 8. Resources -->
   <section id="resources" class="section">
-    <h2 class="section-title"><span class="tag">07</span>延伸資源</h2>
+    <h2 class="section-title"><span class="tag">08</span>延伸資源</h2>
     <div class="resource-list">
       <a class="resource-item" href="https://claude.ai" target="_blank" rel="noopener">
         <strong>claude.ai</strong><span>官方網頁版對話介面</span>
